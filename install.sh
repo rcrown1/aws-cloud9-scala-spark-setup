@@ -32,13 +32,18 @@ echo "Done."
 echo "-----------------------------------------------"
 echo "###  Installing Spark...                    ###"
 echo "-----------------------------------------------"
-wget http://www-us.apache.org/dist/spark/spark-2.2.1/spark-2.2.1-bin-hadoop2.7.tgz
-tar xvf spark-2.2.1-bin-hadoop2.7.tgz 
-rm spark-2.2.1-bin-hadoop2.7.tgz 
-mv spark-2.2.1-bin-hadoop2.7 ~/spark-2.2.1-bin-hadoop2.7
-echo SPARK_HOME="$HOME/spark-2.2.1-bin-hadoop2.7" >> ~/.bash_profile
+wget http://www-us.apache.org/dist/spark/spark-2.4.4/spark-2.4.4-bin-hadoop2.7.tgz
+tar xvf spark-2.4.4-bin-hadoop2.7.tgz 
+rm spark-2.4.4-bin-hadoop2.7.tgz 
+mv spark-2.4.4-bin-hadoop2.7 ~/spark-2.4.4-bin-hadoop2.7
+echo SPARK_HOME="$HOME/spark-2.4.4-bin-hadoop2.7" >> ~/.bash_profile
 echo PATH=\"\$PATH:\$SPARK_HOME/bin\" >> ~/.bash_profile
 echo export PATH >> ~/.bash_profile
+
+echo "-----------------------------------------------"
+echo "###  Force Python3...                       ###"
+echo "-----------------------------------------------"
+echo export PYSPARK_PYTHON=python3 >> ~/.bash_profile
 
 echo "-----------------------------------------------"
 echo "###  Enabling Scala Runner...               ###"
